@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 
-const CupertinoThemeData lightTheme = CupertinoThemeData(
-  primaryColor: CupertinoColors.black,
+final CupertinoThemeData lightTheme = CupertinoThemeData(
+  brightness: Brightness.light,
+  scaffoldBackgroundColor: CupertinoColors.extraLightBackgroundGray,
+  primaryColor: CupertinoColors.systemPink,
+  barBackgroundColor: CupertinoColors.extraLightBackgroundGray.withOpacity(0.6),
 );

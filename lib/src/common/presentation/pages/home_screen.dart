@@ -1,5 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -41,7 +42,10 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
         children: [
           SafeArea(
             child: CupertinoButton.filled(
-              onPressed: play,
+              // onPressed: play,
+              onPressed: () {
+                context.push('/test');
+              },
               child: const Text('play'),
             ),
           ),

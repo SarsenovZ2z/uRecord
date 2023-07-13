@@ -49,7 +49,7 @@ class RemoteAuthDataSource extends RemoteDataSource implements AuthDataSource {
       },
     );
 
-    return AuthTokenModel.fromJson(response);
+    return AuthTokenModel.fromJson(response.data);
   }
 
   @override

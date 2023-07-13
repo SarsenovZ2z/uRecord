@@ -61,9 +61,9 @@ class AuthCubit extends SafeCubit<AuthState> {
   Future<bool?> loginByToken() async {
     if (state is AuthenticatingState) return null;
 
-    emit(const AuthenticatingState());
+    emit(const AuthenticatingByTokenState());
 
-    (await performLoginByToken()).fold(
+    return (await performLoginByToken()).fold(
       (failure) {
         emit(const NotAuthenticatedState());
         return false;

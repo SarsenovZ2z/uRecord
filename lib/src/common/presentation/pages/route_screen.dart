@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 
-class AuthenticatedOnly extends StatelessWidget {
+class RouteScreen extends StatelessWidget {
+
   final Widget child;
 
-  const AuthenticatedOnly({
+  const RouteScreen({
     super.key,
     required this.child,
   });
