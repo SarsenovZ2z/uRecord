@@ -2,8 +2,8 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class PlayerScreen extends StatelessWidget {
+  const PlayerScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

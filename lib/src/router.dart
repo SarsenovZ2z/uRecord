@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
-import 'package:urecord/src/common/presentation/pages/home_screen.dart';
 import 'package:urecord/src/features/auth/presentation/pages/login_screen.dart';
 import 'package:urecord/src/features/auth/presentation/pages/register_screen.dart';
 import 'package:urecord/src/features/auth/presentation/pages/verification_screen.dart';
 import 'package:urecord/src/features/auth/presentation/widgets/middlewares/authenticated_only_middleware.dart';
 import 'package:urecord/src/features/auth/presentation/widgets/middlewares/guests_only_middleware.dart';
+import 'package:urecord/src/features/home/presentation/pages/home_screen.dart';
 
 final GoRouter router = GoRouter(
   initialLocation: '/',
@@ -14,7 +14,7 @@ final GoRouter router = GoRouter(
       path: '/',
       pageBuilder: (context, state) => CupertinoPage(
         key: state.pageKey,
-        title: 'Home',
+        title: 'Listen',
         child: const AuthenticatedOnlyMiddleware(
           child: CupertinoPageScaffold(
             child: HomeScreen(),
