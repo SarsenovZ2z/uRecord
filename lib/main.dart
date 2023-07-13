@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:urecord/src/application.dart';
-import 'package:urecord/service_locator.dart' as di;
+import 'package:urecord/src/service_locator.dart' as di;
 
 void main() async {
   if (kReleaseMode) {

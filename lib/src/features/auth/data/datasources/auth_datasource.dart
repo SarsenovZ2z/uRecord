@@ -8,6 +8,7 @@ abstract class AuthDataSource {
   Future<void> register({
     required String email,
     required String password,
+    required String name,
   });
 
   Future<AuthTokenEntity> login({
@@ -56,6 +57,7 @@ class RemoteAuthDataSource extends RemoteDataSource implements AuthDataSource {
   Future<void> register({
     required String email,
     required String password,
+    required String name,
   }) async {
     final response = await api.request(
       HTTPMethod.post,
@@ -63,6 +65,7 @@ class RemoteAuthDataSource extends RemoteDataSource implements AuthDataSource {
       data: {
         "email": email,
         "password": password,
+        "name": name,
       },
     );
   }

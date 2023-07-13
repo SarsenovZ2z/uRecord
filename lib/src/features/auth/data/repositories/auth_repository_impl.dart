@@ -15,11 +15,13 @@ class AuthRepositoryImpl implements AuthRepository {
   Future<Either<Failure, void>> register({
     required String email,
     required String password,
+    required String name,
   }) async {
     try {
       await authDataSource.register(
         email: email,
         password: password,
+        name: name,
       );
       return const Right(null);
     } on Failure catch (e) {

@@ -22,11 +22,13 @@ class AuthCubit extends SafeCubit<AuthState> {
   Future<bool> register({
     required String email,
     required String password,
+    required String name,
   }) async {
     return (await performRegister(
       RegisterParams(
         email: email,
         password: password,
+        name: name,
       ),
     ))
         .fold(

@@ -15,6 +15,7 @@ class Register extends UseCase<Either<Failure, void>, RegisterParams> {
     return authRepository.register(
       email: params.email,
       password: params.password,
+      name: params.name,
     );
   }
 }
@@ -22,9 +23,11 @@ class Register extends UseCase<Either<Failure, void>, RegisterParams> {
 class RegisterParams {
   final String email;
   final String password;
+  final String name;
 
   const RegisterParams({
     required this.email,
     required this.password,
+    required this.name,
   });
 }

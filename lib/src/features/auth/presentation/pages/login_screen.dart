@@ -53,10 +53,6 @@ class _ContentState extends State<_Content> {
   }
 
   Future<void> _login(BuildContext context) async {
-    if (!(_formKey.currentState?.validate() ?? false)) {
-      return;
-    }
-
     context.read<AuthCubit>().login(
           email: _emailController.text,
           password: _passwordController.text,
@@ -83,7 +79,11 @@ class _ContentState extends State<_Content> {
               ),
               CupertinoButton(
                 onPressed: () {
-                  context.push('/register');
+                  context.push<String?>('/register').then((email) {
+                    if (email is String) {
+                      _emailController.text = email;
+                    }
+                  });
                 },
                 padding: const EdgeInsets.symmetric(horizontal: 5),
                 child: const Text(
@@ -116,7 +116,9 @@ class _ContentState extends State<_Content> {
               onPressed: isLoading
                   ? null
                   : () {
-                      _login(context);
+                      if (_formKey.currentState?.validate() ?? false) {
+                        _login(context);
+                      }
                     },
               child: AnimatedSize(
                 duration: const Duration(milliseconds: 100),
